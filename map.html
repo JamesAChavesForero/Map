@@ -28,20 +28,15 @@
 
         #map {
             z-index: 11;
-          
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
         }
-
-        #overlay {
-            position: absolute;
-            background-color: black;
-            opacity: 0.7;
-            z-index: 10;
-            height: 100vh;
-            width: 100vw;
+        #priceContainer{
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
         #price{
             align-self: end;
@@ -49,7 +44,6 @@
         #svgContainer{
             align-self: start;
         }
-
         #pricingDetails {
             font-size: 14px;
             align-self: end;
@@ -251,7 +245,7 @@
         </section>
         <footer>
             <h3 id="title"></h3>
-            <div style="display: flex; align-items: center; justify-content: center; ">
+            <div id="priceContainer">
                 <span id="price"></span>
                 <aside id="svgContainer"></aside>
                 <span id="pricingDetails">
@@ -265,6 +259,6 @@
         </footer>
     </div>
 </body>
-<script src="./script.js"></script>
+<script src="./routeMap.js"></script>
 
 </html>
