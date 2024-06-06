@@ -1,8 +1,4 @@
 <style>
-    .hide {
-        display: none !important;
-    }
-
     #container {
         scale: 0.9;
         display: flex;
@@ -19,11 +15,6 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-    }
-
-    #icons img.active{
-        scale: 0.8;
-        fill: #D9D9D9;
     }
 
     #icons img:hover {
@@ -127,12 +118,14 @@
         max-width: 450px;
     }
 </style>
-
-<div id="product-price-guarantee" class="product-icon-card__modal container" style="display: flex;">
+<button id="trigger" >
+    Open Modal
+</button>
+<div id="product-map-modal" class="product-icon-card__modal container" style="display: none;">
     <div class="product-icon-card__modal-inner">
 
         <div id="container">
-
+            
             <header id="icons">
                 <img class="step1" src="./icons/step1.svg">
                 <img class="step2" src="./icons/step2.svg">

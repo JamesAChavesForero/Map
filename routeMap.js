@@ -52,6 +52,11 @@ const routeInfo = (route) => {
     },
   };
 
+
+  
+
+
+
   document.getElementById("title").innerText = `Cevi Med Premium Shipping - ${
     routeObject[`${route}`].routeName
   } Route`;
@@ -136,3 +141,13 @@ Array.from(document.querySelectorAll("#icons img")).forEach((el) =>
   })
 
 );
+
+
+// This is for show/hide the map pop up
+
+document.getElementById('trigger').addEventListener('click', (e) => {
+  console.log("x")
+    const state = document.getElementById('product-map-modal');
+    (state.style.display == 'none' ?  state.style.display = 'flex' : state.style.display = 'none');
+    e.target.innerText = state.style.display == 'none'  ? 'Show Modal': 'Hide Modal';
+})
