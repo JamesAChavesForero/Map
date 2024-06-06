@@ -17,7 +17,7 @@ const routeInfo = (route) => {
     },
     nwRoute: {
       color: "#BE0BC4",
-      price: 400,
+      price: 450,
       routeName: "North West",
       states: "Montana, Nebraska, North Dakota, South Dakota, Utah & Wyoming",
       ETA: "",
@@ -25,14 +25,14 @@ const routeInfo = (route) => {
     chRoute: {
       color: "#0B6DC4",
       price: 400,
-      routeName: "Chicago Coast",
+      routeName: "Chicago",
       states: "Illinois , Iowa, Minnesota, Missouri & Wisconsin",
       ETA: "",
     },
     txRoute: {
       color: "#DEA812",
-      price: 450,
-      routeName: "Texas Coast",
+      price: 350,
+      routeName: "Texas",
       states: "Arizona, Colorado, Kansas, New Mexico, Oklahoma & Texas",
       ETA: "",
     },
@@ -70,10 +70,10 @@ const routeInfo = (route) => {
 
   document.getElementById(
     "pricingDetails"
-  ).innerHTML = `Additional discounted Shipping per additonal table purchased!`;
+  ).innerHTML = `Additional discounted Shipping per every table purchased!`;
 
   document.getElementById("routeDetails").innerHTML = `<span>
-  This Route Includes the following States :
+  ${routeObject[`${route}`].routeName} Route Includes the following States :
   </span>
   <br/>
   <b style="color:${routeObject[`${route}`].color}; font-size: 15px;">
@@ -83,7 +83,7 @@ const routeInfo = (route) => {
   Array.from(document.querySelectorAll(`.${route}`)).forEach((data) => {
     data.addEventListener("mouseover", () => {
       Array.from(document.querySelectorAll(`.${route}`)).forEach(
-        (state) => (state.style.fill = routeObject[`${route}`].color, state.style.border = "5px solid white")
+        (state) => (state.style.fill = routeObject[`${route}`].color)
       );
     });
 
@@ -97,6 +97,42 @@ const routeInfo = (route) => {
 
 Array.from(document.querySelectorAll("path")).forEach((el) =>
   el.addEventListener("mouseenter", () => {
+    el.style.fillOpacity = "0.8"
+    el.style.stroke = "white"
     routeInfo(el.classList.value);
   })
+);
+Array.from(document.querySelectorAll("path")).forEach((el) =>
+  el.addEventListener("mouseleave", () => {
+    el.style.transition = "0.5s"
+    el.style.fillOpacity = "1"
+    el.style.stroke = "unset"
+  })
+);
+
+const shipInfo = (step) =>{
+  console.log("step : ", step)
+  const msgObject = {
+    step1 : "Quote, Compare and Choose the best Shipping option before paying",
+    step2 : "We package and ship the equipment ourselves to ensure proper handling",
+    step3 : "Your order is tracked live by our staff and you will be assigned a numeric position on our route",
+    step4 : "Shipments with our Cevi Med trcuks for Chicago Routes leave twice a month",
+    step5 : "We offer lift gate services and many other accomidations taylored to meet you specific shipping needs no matter where yu are located, except if your in Alaska , in that case Please hire Santas Reindeer services",
+    step6 : "We personally package and provide inside delivery to ensure orders are properly functioning",
+    step7 : "We personally send one of our technicians to troubleshoot and fix any issues if they arise",
+    step8 : "Following up with our customers is our priority, Your success is our success"
+  }
+
+  document.getElementById("shipmentDetails").innerHTML = `<h2 class="msgBubble">${msgObject[`${step}`]}</h2>`;
+
+
+}
+
+Array.from(document.querySelectorAll("#icons img")).forEach((el) =>
+  el.addEventListener("mouseenter", () => {
+    shipInfo(el.classList.value),
+    
+    console.log(el)
+  })
+
 );
