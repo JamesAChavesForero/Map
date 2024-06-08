@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #container {
-            scale: 0.9;
+        #product-icon-card__modal-inner #product-map-modal{
             display: none;
+        }
+        #mapContainer {
+            scale: 0.9;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -184,10 +187,10 @@
         Open Modal
     </button>
 
-    <div id="product-map-modal" class="product-icon-card__modal container" style="display: flex">
+    <div id="product-map-modal" class="product-icon-card__modal container" style="display: none">
         <div class="product-icon-card__modal-inner">
 
-            <div id="container">
+            <div id="mapContainer">
                 <header id="icons">
                     <img class="step1" src="./icons/step1.svg">
                     <img class="step2" src="./icons/step2.svg">
@@ -247,12 +250,8 @@
                         </div>
                         
                     </div>
-
-
                 </footer>
-
             </div>
-            <button data-fancybox-close class="fancybox-button fancybox-button--close">Close</button>
         </div>
 
         <script src="./routeMap.js"></script>
