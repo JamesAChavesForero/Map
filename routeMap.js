@@ -69,12 +69,6 @@ const msgObject = {
     "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
 };
 
-// B4 : This is to show/hide the map pop up
-document.getElementById("trigger").addEventListener("click", ({target}) => {
-  const state = document.getElementById("product-map-modal");
-  target.innerText = target.innerText == "Show Modal" ? "Hide Modal" : "Show Modal";
-  state.classList.toggle("hide")
-});
 
 // initial view responsiveness
 Array.from(document.querySelectorAll("li")).forEach((item) => {
