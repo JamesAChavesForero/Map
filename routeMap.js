@@ -285,12 +285,12 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
     </b>`;
 
     // modifies footer pricing details
-    document.getElementById("title").innerText = `Cevi Med Premium Shipping - ${
+    document.getElementById("routeTitle").innerText = `Cevi Med Premium Shipping - ${
       routeObject[`${route}`].routeName
     } Route`;
-    document.getElementById("price").style.color =
+    document.getElementById("routePrice").style.color =
       routeObject[`${route}`].color;
-    document.getElementById("price").innerHTML = `${
+    document.getElementById("routePrice").innerHTML = `${
       routeObject[`${route}`].price
     }`;
     document.getElementById(
