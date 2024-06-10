@@ -54,10 +54,11 @@ const routeObject = {
 
 // B4 : This is to show/hide the map pop up
 
-document.getElementById("trigger").addEventListener("click", (e) => {
+document.getElementById("trigger").addEventListener("click", ({target}) => {
   const state = document.getElementById("product-map-modal");
-  state.innerText == "Hide Modal" ? "Show Modal" : "Hide Modal";
+  target.innerText = target.innerText == "Show Modal" ? "Hide Modal" : "Show Modal";
   state.classList.toggle("hide")
+  console.log(target.innerText)
 });
 
 // initial view responsiveness
