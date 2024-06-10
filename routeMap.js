@@ -51,14 +51,29 @@ const routeObject = {
     ETA: "",
   },
 };
+const msgObject = {
+  step1: "Our process begins with a thorough understanding of your specific needs to find you the best options and quotes",
+  step2:
+    "We use specialized packaging and white-glove delivery services to guarantee that each item arrives in pristine condition, ready for immediate use.",
+  step3:
+    "Your order is tracked live by our Our dedicated logistics experts to ensure seamless coordination from pick-up to drop off",
+  step4:
+    "Our dedicated team adhere to strict timelines, maintaining open communication throughout the process",
+  step5:
+    " We offer lift gate services and many other accomidations With a focus on reliability, security, and exceptional customer service",
+  step6:
+    "We ensure that every piece of equipment is handled with the utmost care and precision during the entire process",
+  step7:
+    "We personally send one of our technicians to troubleshoot and fix any issues if they arise",
+  step8:
+    "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
+};
 
 // B4 : This is to show/hide the map pop up
-
 document.getElementById("trigger").addEventListener("click", ({target}) => {
   const state = document.getElementById("product-map-modal");
   target.innerText = target.innerText == "Show Modal" ? "Hide Modal" : "Show Modal";
   state.classList.toggle("hide")
-  console.log(target.innerText)
 });
 
 // initial view responsiveness
@@ -322,24 +337,6 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
 
 const shipInfo = (step) => {
 
-  const msgObject = {
-    step1: "Our process begins with a thorough understanding of your specific needs to find you the best options and quotes",
-    step2:
-      "We use specialized packaging and white-glove delivery services to guarantee that each item arrives in pristine condition, ready for immediate use.",
-    step3:
-      "Your order is tracked live by our Our dedicated logistics experts to ensure seamless coordination from pick-up to drop off",
-    step4:
-      "Our dedicated team adhere to strict timelines, maintaining open communication throughout the process",
-    step5:
-      " We offer lift gate services and many other accomidations With a focus on reliability, security, and exceptional customer service",
-    step6:
-      "We ensure that every piece of equipment is handled with the utmost care and precision during the entire process",
-    step7:
-      "We personally send one of our technicians to troubleshoot and fix any issues if they arise",
-    step8:
-      "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
-  };
-
   document.getElementById(
     "shipmentDetails"
   ).innerHTML = `<h2 class="msgBubble">${msgObject[`${step}`]}</h2>`;
@@ -348,6 +345,6 @@ const shipInfo = (step) => {
 Array.from(document.querySelectorAll("#icons img")).forEach((el) =>
   el.addEventListener("mouseenter", () => {
     shipInfo(el.classList.value)
-
+    // el.classList.toggle(".active")
   })
 );

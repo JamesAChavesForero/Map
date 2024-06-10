@@ -35,6 +35,19 @@
             cursor: pointer;
         }
 
+        @keyframes glow {
+            to {
+                box-shadow: 0px 0px 30px 20px #535FED;
+            }
+        }
+
+        #icons .active {
+            margin: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 9px 4px #747DE8;
+            animation: glow 1.5s linear infinite alternate;
+        }
+
         #routeList {
             width: 30%;
             list-style-type: none;
@@ -159,10 +172,12 @@
             display: flex;
             text-align: center;
         }
-        .gateway p{
+
+        .gateway p {
             margin-top: 30px;
 
         }
+
         .delGuy {
             height: 70px;
             margin: 0 0 10px 20px;
@@ -243,7 +258,8 @@
                     <div class="gateway">
                         <div>
                             <p>
-                                We take pride in fulfilling your order from start to finish our selves ensuring you receive your order in top conditions 
+                                We take pride in fulfilling your order from start to finish our selves ensuring you
+                                receive your order in top conditions
                                 no matter where you are located
                             </p>
                             <span>
