@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #product-icon-card__modal-inner #product-map-modal{
+        .hide {
             display: none;
         }
+
         #mapContainer {
             scale: 0.9;
             display: flex;
@@ -43,7 +44,8 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        #routeList li:hover{
+
+        #routeList li:hover {
             cursor: pointer;
             text-decoration: underline;
         }
@@ -102,6 +104,7 @@
             z-index: 11;
             display: flex;
         }
+
         #map svg {
             cursor: pointer;
             margin-right: 10%;
@@ -110,8 +113,9 @@
         #map img {
             width: 300px;
         }
+
         #map img:hover {
-            scale: 0.99;
+            scale: 0.9;
             animation: open 3s;
             perspective: 1000px;
             cursor: pointer;
@@ -155,25 +159,28 @@
             display: flex;
             text-align: center;
         }
+        .gateway p{
+            margin-top: 30px;
 
+        }
         .delGuy {
             height: 70px;
-            margin: 20px 0 10px 20px;
+            margin: 0 0 10px 20px;
             perspective: 1000px;
             cursor: pointer;
         }
 
         #exploreBtn {
             height: 20px;
-            width: 100%;
+            width: 110%;
             font-size: 8px;
             padding: 0 5px 0 5px;
             border: none;
             color: white;
             font-weight: 100;
             background-color: #BE0C11;
-            border-radius: 20px;
         }
+
         #exploreBtn:hover {
             scale: 1.1;
             animation: open 1s;
@@ -192,7 +199,7 @@
         Open Modal
     </button>
 
-    <div id="product-map-modal" class="product-icon-card__modal container" style="display: none">
+    <div id="product-map-modal" class="product-icon-card__modal container hide">
         <div class="product-icon-card__modal-inner">
 
             <div id="mapContainer">
@@ -236,24 +243,22 @@
                     <div class="gateway">
                         <div>
                             <p>
-                                We use specialized packaging and white-glove delivery services to guarantee
-                                that each item arrives in pristine condition, ready for immediate use. With a focus on
-                                reliability, security, and exceptional customer service
+                                We take pride in fulfilling your order from start to finish our selves ensuring you receive your order in top conditions 
+                                no matter where you are located
                             </p>
-                            <span>Delivery by Cevi Med is
-                                committed to supporting the healthcare industry by delivering essential medical
-                                equipment with excellence and efficiency.
+                            <span>
+
                             </span>
-                        <h4>
-                            Feel free to explore our map for more details about pricing estimates and shipping
-                            arrangements.
-                        </h4>
+                            <h4>
+                                Feel free to explore our map for more details about pricing estimates and shipping
+                                arrangements.
+                            </h4>
                         </div>
                         <div>
                             <img class="delGuy" src="./icons/delGuyUp.svg">
                             <button id="exploreBtn">Explore Cevi Med Routes</button>
                         </div>
-                        
+
                     </div>
                 </footer>
             </div>

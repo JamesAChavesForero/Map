@@ -51,19 +51,13 @@ const routeObject = {
     ETA: "",
   },
 };
-let routeView = false;
 
-// B4 : This is for show/hide the map pop up
+// B4 : This is to show/hide the map pop up
 
 document.getElementById("trigger").addEventListener("click", (e) => {
-
   const state = document.getElementById("product-map-modal");
-  state.style.display == "none"
-    ? (state.style.display = "flex")
-    : (state.style.display = "none");
-  e.target.innerText =
-    state.style.display == "none" ? "Show Modal" : "Hide Modal";
-  
+  state.innerText == "Hide Modal" ? "Show Modal" : "Hide Modal";
+  state.classList.toggle("hide")
 });
 
 // initial view responsiveness
@@ -74,12 +68,10 @@ Array.from(document.querySelectorAll("li")).forEach((item) => {
     } Route`);
 });
 
-!routeView &&
   document.querySelector(".delGuy").addEventListener("mouseenter", () => {
     document.querySelector(".delGuy").src = "./icons/delGuy.svg";
   });
 
-!routeView &&
   document.querySelector(".delGuy").addEventListener("mouseleave", () => {
     document.querySelector(".delGuy").src = "./icons/delGuyUp.svg";
   });
@@ -88,9 +80,9 @@ Array.from(document.querySelectorAll("li")).forEach((item) => {
 
 //trigger
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  document.getElementById("icons").style.display = "flex"
-  document.getElementById("icons").style.display = "flex"
-  document.querySelector(".gateway").style.display = "none"
+  document.getElementById("icons").style.display = "flex";
+  document.getElementById("icons").style.display = "flex";
+  document.querySelector(".gateway").style.display = "none";
   document.getElementById(
     "map"
   ).innerHTML = `<svg width="568" height="268" viewBox="0 0 668 368" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -266,6 +258,7 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
                 </svg>`;
 
   const routeInfo = (route) => {
+
     // modifies shipping details
     document.getElementById("routeDetails").innerHTML = `<span>
     ${routeObject[`${route}`].routeName} Route Includes the following States :
@@ -274,6 +267,7 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
     <b style="color:${routeObject[`${route}`].color}; font-size: 15px;">
     ${routeObject[`${route}`].states} 
     </b>`;
+
     // modifies footer pricing details
     document.getElementById("title").innerText = `Cevi Med Premium Shipping - ${
       routeObject[`${route}`].routeName
@@ -312,6 +306,7 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
     el.addEventListener("mouseenter", () => {
       el.style.fillOpacity = "0.8";
       el.style.stroke = "white";
+      el.style.fill = routeObject[`${el.classList.value}`].color
       routeInfo(el.classList.value);
     })
   );
@@ -325,23 +320,23 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
 });
 
 const shipInfo = (step) => {
-  console.log("step : ", step);
+
   const msgObject = {
-    step1: "Quote, Compare and Choose the best Shipping option before paying",
+    step1: "Our process begins with a thorough understanding of your specific needs to find you the best options and quotes",
     step2:
-      "We package and ship the equipment ourselves to ensure proper handling",
+      "We use specialized packaging and white-glove delivery services to guarantee that each item arrives in pristine condition, ready for immediate use.",
     step3:
-      "Your order is tracked live by our staff and you will be assigned a numeric position on our route",
+      "Your order is tracked live by our Our dedicated logistics experts to ensure seamless coordination from pick-up to drop off",
     step4:
-      "Shipments with our Cevi Med trcuks for Chicago Routes leave twice a month",
+      "Our dedicated team adhere to strict timelines, maintaining open communication throughout the process",
     step5:
-      "We offer lift gate services and many other accomidations taylored to meet you specific shipping needs no matter where yu are located, except if your in Alaska , in that case Please hire Santas Reindeer services",
+      " We offer lift gate services and many other accomidations With a focus on reliability, security, and exceptional customer service",
     step6:
-      "We personally package and provide inside delivery to ensure orders are properly functioning",
+      "We ensure that every piece of equipment is handled with the utmost care and precision during the entire process",
     step7:
       "We personally send one of our technicians to troubleshoot and fix any issues if they arise",
     step8:
-      "Following up with our customers is our priority, Your success is our success",
+      "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
   };
 
   document.getElementById(
@@ -351,6 +346,7 @@ const shipInfo = (step) => {
 
 Array.from(document.querySelectorAll("#icons img")).forEach((el) =>
   el.addEventListener("mouseenter", () => {
-    shipInfo(el.classList.value), console.log(el);
+    shipInfo(el.classList.value)
+
   })
 );
