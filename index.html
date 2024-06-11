@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html{
+        html {
             margin: 0;
             padding: 0;
             overflow: hidden;
+            min-width: 375px;
         }
+
         #mapContainer {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 600px;
             height: max-content;
             object-fit: contain;
         }
@@ -136,6 +137,9 @@
 
         #routeTitle {
             margin: 2px;
+            font: 12px;
+            font-weight: 100;
+            text-align: center;
         }
 
         #priceContainer {
@@ -167,7 +171,7 @@
         }
 
         .gateway {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 100;
             display: flex;
             text-align: center;
@@ -175,12 +179,11 @@
 
         .gateway p {
             margin-top: 30px;
-
         }
 
         .delGuy {
             height: 70px;
-            margin: 0 0 10px 20px;
+            margin: 20px 0 10px 20px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -206,78 +209,103 @@
             background-color: white;
             color: #BE0C11;
         }
+
+        @media (max-width: 650px) {
+
+            #routeList {
+                display: none;
+            }
+
+            .delGuy {
+                margin-top: 30px;
+
+            }
+
+            @media (max-width: 450px) {
+                * {
+                    scale: 0.98;
+                }
+
+                .gateway {
+                    margin: unset;
+                }
+
+                .delGuy {
+                    margin-top: 40px;
+                }
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div id="product-map-modal" class="product-icon-card__modal container hide">
-        <div class="product-icon-card__modal-inner">
+    <div class="product-icon-card__modal-inner">
 
-            <div id="mapContainer">
-                <header id="icons">
-                    <img class="step1" src="./icons/step1.svg">
-                    <img class="step2" src="./icons/step2.svg">
-                    <img class="step3" src="./icons/step3.svg">
-                    <img class="step4" src="./icons/step4.svg">
-                    <img class="step5" src="./icons/step5.svg">
-                    <img class="step6" src="./icons/step6.svg">
-                    <img class="step7" src="./icons/step7.svg">
-                    <img class="step8" src="./icons/step8.svg">
-                </header>
-                <h2 id="shipmentDetails">
-                    <img src="./icons/logo.png" alt="" id="logo">
-                </h2>
-                <small id="routeDetails">
-                </small>
-                <section id="map">
-                    <ul id="routeList">
-                        <li class="wcRoute"></li>
-                        <li class="nwRoute"></li>
-                        <li class="txRoute"></li>
-                        <li class="chRoute"></li>
-                        <li class="ecRoute"></li>
-                        <li class="exRoute"></li>
-                        <li class="noRoute"></li>
-                    </ul>
-                    <img src="./icons/map.svg" alt="">
-                </section>
+        <div id="mapContainer">
+            <header id="icons">
+                <img class="step1" src="./icons/step1.svg">
+                <img class="step2" src="./icons/step2.svg">
+                <img class="step3" src="./icons/step3.svg">
+                <img class="step4" src="./icons/step4.svg">
+                <img class="step5" src="./icons/step5.svg">
+                <img class="step6" src="./icons/step6.svg">
+                <img class="step7" src="./icons/step7.svg">
+                <img class="step8" src="./icons/step8.svg">
+            </header>
+            <h2 id="shipmentDetails">
+                <img src="./icons/logo.png" alt="" id="logo">
+            </h2>
+            <small id="routeDetails">
+            </small>
+            <section id="map">
+                <ul id="routeList">
+                    <li class="wcRoute"></li>
+                    <li class="nwRoute"></li>
+                    <li class="txRoute"></li>
+                    <li class="chRoute"></li>
+                    <li class="ecRoute"></li>
+                    <li class="exRoute"></li>
+                    <li class="noRoute"></li>
+                </ul>
+                <img src="./icons/map.svg" alt="">
+            </section>
 
-                <footer id="footer">
-                    <h3 id="routeTitle"></h3>
-                    <aside id="priceContainer">
-                        <span id="routePrice"></span>
-                        <aside id="svgContainer"></aside>
-                        <span id="pricingDetails">
+            <footer id="footer">
+                <h3 id="routeTitle"></h3>
+                <aside id="priceContainer">
+                    <span id="routePrice"></span>
+                    <aside id="svgContainer"></aside>
+                    <span id="pricingDetails">
+                    </span>
+                </aside>
+
+                <div class="gateway">
+                    <div>
+                        <p>
+                            We take pride in fulfilling your order from start to finish our selves ensuring you
+                            receive your order in top conditions
+                            no matter where you are located
+                        </p>
+                        <span>
+
                         </span>
-                    </aside>
-
-                    <div class="gateway">
-                        <div>
-                            <p>
-                                We take pride in fulfilling your order from start to finish our selves ensuring you
-                                receive your order in top conditions
-                                no matter where you are located
-                            </p>
-                            <span>
-
-                            </span>
-                            <h4>
-                                Feel free to explore our map for more details about pricing estimates and shipping
-                                arrangements.
-                            </h4>
-                        </div>
-                        <div>
-                            <img class="delGuy" src="./icons/delGuyUp.svg">
-                            <button id="exploreBtn">Explore Cevi Med Routes</button>
-                        </div>
-
+                        <h4>
+                            Feel free to explore our map for more details about pricing estimates and shipping
+                            arrangements.
+                        </h4>
                     </div>
-                </footer>
-            </div>
-        </div>
+                    <div>
+                        <img class="delGuy" src="./icons/delGuyUp.svg">
+                        <button id="exploreBtn">Explore Cevi Med Routes</button>
+                    </div>
 
-        <script src="./routeMap.js"></script>
+                </div>
+            </footer>
+        </div>
     </div>
+
+    <script src="./routeMap.js"></script>
+
 </body>
 
 </html>

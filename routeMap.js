@@ -90,6 +90,7 @@ Array.from(document.querySelectorAll("li")).forEach((item) => {
 
 //trigger
 document.getElementById("exploreBtn").addEventListener("click", () => {
+  document.getElementById("routeTitle").innerText = (screen.width > 451 ) ? `Explore the map to find the best Shipping options in your area! By hovering over the region you  wish to ship your purchase, Pricing details will also be confirmed at checkout` : `Explore the map to find the best Shipping options in your area! By clicking on the state you wish to ship your purchase, Pricing details will also be confirmed at checkout`
   document.getElementById("icons").style.display = "flex";
   document.getElementById("icons").style.display = "flex";
   document.querySelector(".gateway").style.display = "none";
