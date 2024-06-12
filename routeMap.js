@@ -69,7 +69,6 @@ const msgObject = {
     "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
 };
 
-
 // initial view responsiveness
 Array.from(document.querySelectorAll("li")).forEach((item) => {
   (item.style.color = routeObject[`${item.classList.value}`].color),
@@ -295,7 +294,7 @@ document.getElementById("exploreBtn").addEventListener("click", () => {
     }"/></svg>`;
     document.getElementById(
       "pricingDetails"
-    ).innerHTML = `Additional discounted Shipping per every table purchased!`;
+    ).innerHTML = [`${route}`] == "noRoute" ? `Please request a special Quote for Hawaii and Alaska Shipping or Provide your carrier Information` : `Additional discounted Shipping per every table purchased!`;
 
     //modifies state colors by route
     Array.from(document.querySelectorAll(`.${route}`)).forEach((data) => {
