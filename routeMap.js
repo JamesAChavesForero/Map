@@ -53,21 +53,21 @@ const routeObject = {
 };
 const msgObject = {
   step1:
-    "Our process begins with a thorough understanding of your specific needs to find you the best options and quotes",
+    "Our sales reps work closely with you to understand your specific needs to quote you with the best options.",
   step2:
-    "We use specialized packaging and white-glove delivery services to guarantee that each item arrives in pristine condition, ready for immediate use.",
+    "With a wide selection of upholstery colors, we are able to offer you the option to customize your equipment to match your exact offices style.",
   step3:
-    "Your order is tracked live by our Our dedicated logistics experts to ensure seamless coordination from pick-up to drop off",
+    "Our technicians take each refurbished unit and restore the equipment to like new condition. Each piece of equipment is handled with the utmost care and precision during the entire process.",
   step4:
-    "Our dedicated team adhere to strict timelines, maintaining open communication throughout the process",
+    "White-Glove delivery options guarantee that each item arrives to your location ready for immediate use.",
   step5:
-    " We offer lift gate services and many other accomidations With a focus on reliability, security, and exceptional customer service",
+    "Our team maintains open communication throughout the process by phone and email. Reach out at any point of your purchase for a status update.",
   step6:
-    "We ensure that every piece of equipment is handled with the utmost care and precision during the entire process",
+    "After a truck is dispatched customers can track their order using a live link to help you coordinate for delivery.",
   step7:
-    "We personally send one of our technicians to troubleshoot and fix any issues if they arise",
+    "One year warranty on equipment to ensure that your investment is protected.",
   step8:
-    "Delivery by Cevi Med is committed to supporting the healthcare industry by delivering essential medical equipment with excellence and efficiency.  Your success is our success",
+    "Your success is our success. This is our motto. We believe if we are successful at completing our job you will have the tools you needed to be successful in yours. This is our commitment.",
 };
 
 // initial view responsiveness
