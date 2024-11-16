@@ -24,7 +24,7 @@ const routeObject = {
   },
   chRoute: {
     color: "#0B6DC4",
-    price: 400,
+    price: 350,
     routeName: "Chicago",
     states: "Illinois , Iowa, Minnesota, Missouri & Wisconsin",
     ETA: "",
